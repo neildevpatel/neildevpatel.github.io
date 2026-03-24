@@ -49,15 +49,19 @@
         </div>
         <script>let currentIndex=0;function changeImage(d){const imgs=document.querySelectorAll('.gallery-images img');imgs[currentIndex].classList.remove('active');currentIndex+=d;if(currentIndex<0)currentIndex=imgs.length-1;else if(currentIndex>=imgs.length)currentIndex=0;imgs[currentIndex].classList.add('active');}</script>
         <div class="detail-meta">
-            <span><i>Affiliation:</i> MIT D-Lab</span>
-            <span><i>Completion:</i> August 2023</span>
+            <div class="badge badge-active">MIT D-Lab</div>
+            <div class="badge badge-prev">August 2023</div>
         </div>
         <p>Ecoconcientizate is currently piloting a cutting-edge biological sewage treatment system specifically designed for use in rural Colombia. The vermifiltration system utilizes California red worms to compost fecal matter, and then drains liquids into a secondary layer of sand and gravel filters before transporting it to an artificial wetland for further treatment through a phytoremediation process. Our team conducted water quality testing on three vermifilter systems in Agua Bonita, Colombia. We also led bilingual community workshops in Spanish and English on at-home water quality monitoring for community members interested in installing their own vermifilter system.</p>
         <h2>More</h2>
-        <ul>
-            <li>[Website] Project Page <a href="https://d-lab.mit.edu/academics/student-projects-presentations/data-collection-and-monitoring-vermifilter-toilets" class="button"> Link </a></li>
-            <li>[Media] MIT Spectrum Article <a href="https://betterworld.mit.edu/spectrum/issues/2024-fall/real-people-real-solutions-at-d-lab/" class="button"> Link </a></li>
-        </ul>
+        <div class="card">
+            <div class="badge badge-active">Website</div>
+            <div class="card-body"><p><span class="card-title">Project Page<a href="https://d-lab.mit.edu/academics/student-projects-presentations/data-collection-and-monitoring-vermifilter-toilets" class="button"> Link </a></span> <span class="card-sep"></span></p></div>
+        </div>
+        <div class="card">
+            <div class="badge badge-active">Media</div>
+            <div class="card-body"><p><span class="card-title">MIT Spectrum Article<a href="https://betterworld.mit.edu/spectrum/issues/2024-fall/real-people-real-solutions-at-d-lab/" class="button"> Link </a></span> <span class="card-sep"></span></p></div>
+        </div>
     </div>
 </body>
 </html>

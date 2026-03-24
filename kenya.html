@@ -47,14 +47,15 @@
         </div>
         <script>let currentIndex=0;function changeImage(d){const imgs=document.querySelectorAll('.gallery-images img');imgs[currentIndex].classList.remove('active');currentIndex+=d;if(currentIndex<0)currentIndex=imgs.length-1;else if(currentIndex>=imgs.length)currentIndex=0;imgs[currentIndex].classList.add('active');}</script>
         <div class="detail-meta">
-            <span><i>Affiliation:</i> USAID WASH-FIN 2</span>
-            <span><i>Completion:</i> August 2023</span>
+            <div class="badge badge-active">USAID WASH-FIN 2</div>
+            <div class="badge badge-prev">September 2023</div>
         </div>
         <p>Capstone Thesis for MASc in Data, Economics, and Development Policy at MIT. The COVID-19 pandemic had a substantial impact on financial sustainability of water utilities in Kenya. USAID's Water, Sanitation, and Hygiene Finance (WASH-FIN) supported four Kenyan county water utilities in replacing 5,100 meters to improve the accuracy of billing systems. Using a differences-in-differences quasi-experimental design, I produce an estimate of the financial impact of the metering intervention on revenue collection while differencing out temporal variation and baseline imbalances in water consumption. The final report and verbal presentation were evaluated by faculty director and Nobel laureate Esther Duflo.</p>
         <h2>More</h2>
-        <ul>
-            <li>[Slides] Capstone Presentation <a href="files/WF2_DEDP_Capstone_Patel.pdf" class="button">Link</a></li>
-        </ul>
+        <div class="card">
+            <div class="badge badge-active">Presentation</div>
+            <div class="card-body"><p><span class="card-title">Capstone Presentation <a href="files/WF2_DEDP_Capstone_Patel.pdf" class="button">Link</a></span> <span class="card-sep"></span></p></div>
+        </div>
     </div>
 </body>
 </html>
