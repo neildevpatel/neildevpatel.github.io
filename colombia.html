@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="project-detail.css">
     <title>Neil Patel</title>
 </head>
 <body>
@@ -18,51 +19,45 @@
             <a href="map.html">Work History</a>
         </div>
     </nav>
-    <div class="grid-2">
-        <div class="section-1">
-            <img src="pics/Headshot.jpg" alt="Neil Patel's headshot">
+    <div class="detail-hero">
+        <div class="detail-hero-bg"></div>
+        <div class="scanlines"></div>
+        <div class="bracket bracket-tl"></div>
+        <div class="bracket bracket-tr"></div>
+        <div class="detail-hero-inner">
+            <img src="pics/Headshot.jpg" alt="Neil Patel's headshot" class="detail-avatar">
             <h1>Neil Patel</h1>
-            <p>Urban Economist | Water Security & Climate Adaptation</p>
-            <div class="social-links">
+            <div class="detail-tagline">Urban Economist · Water Security & Climate Adaptation</div>
+            <div class="detail-social">
                 <a href="https://twitter.com/neildevpatel"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.linkedin.com/in/neil-patel-035879119/"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/neildevpatel"><i class="fab fa-github"></i></a>
-                <a href="https://riverinreverse.substack.com/">
-                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path stroke="currentColor" d="M3.5,2.5 L19.5,2.5 L19.5,4.5 L3.5,4.5 Z M3.5,6.5 L19.5,6.5 L19.5,8.5 L3.5,8.5 Z M3.5,10.5 L19.5,10.5 L19.5,21.5 L11.5,16.5 L3.5,21.5 L3.5,10.5 Z"></path></g></svg>
-                </a>
+                <a href="https://riverinreverse.substack.com/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path stroke="currentColor" d="M3.5,2.5 L19.5,2.5 L19.5,4.5 L3.5,4.5 Z M3.5,6.5 L19.5,6.5 L19.5,8.5 L3.5,8.5 Z M3.5,10.5 L19.5,10.5 L19.5,21.5 L11.5,16.5 L3.5,21.5 L3.5,10.5 Z"></path></g></svg></a>
             </div>
         </div>
-        <div class="section-2">  
-            <h1>Data Collection and Monitoring for Vermifilter Toilets in Agua Bonita, Colombia</h1>
-            <div class="gallery">
-                <div class="gallery-images">
-                    <img src="pics/colombia.png" alt="Image 1" class="active">
-                    <img src="pics/colombia2.jpeg" alt="Image 2">
-                    <img src="pics/colombia3.jpeg" alt="Image 3">
-                </div>
-                <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
-                <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+    </div>
+    <div class="detail-content">
+        <h1 class="detail-title">Data Collection and Monitoring for Vermifilter Toilets in Agua Bonita, Colombia</h1>
+        <div class="gallery">
+            <div class="gallery-images">
+                <img src="pics/colombia.png" alt="Image 1" class="active">
+                <img src="pics/colombia2.jpeg" alt="Image 2">
+                <img src="pics/colombia3.jpeg" alt="Image 3">
             </div>
-            <script>
-                let currentIndex = 0;
-                function changeImage(direction) {
-                    const images = document.querySelectorAll('.gallery-images img');
-                    images[currentIndex].classList.remove('active');
-                    currentIndex += direction;
-                    if (currentIndex < 0) currentIndex = images.length - 1;
-                    else if (currentIndex >= images.length) currentIndex = 0;
-                    images[currentIndex].classList.add('active');
-                }
-            </script>
-            <p style="font-size:90%; color: rgba(255, 255, 255, 0.691)"><i>Affiliation:</i> MIT D-Lab</p>
-            <p style="font-size:90%; color: rgba(255, 255, 255, 0.691)"><i>Completion:</i> August 2023</p>
-            <p>Ecoconcientizate is currently piloting a cutting-edge biological sewage treatment system specifically designed for use in rural Colombia. The vermifiltration system utilizes California red worms to compost fecal matter, and then drains liquids into a secondary layer of sand and gravel filters before transporting it to an artificial wetland for further treatment through a phytoremediation process. Our team conducted water quality testing on three vermifilter systems in Agua Bonita, Colombia. We also led bilingual community workshops in Spanish and English on at-home water quality monitoring for community members interested in installing their own vermifilter system.</p>
-            <h2>More</h2>
-            <ul>
-                <li>[Website] Project Page <a href="https://d-lab.mit.edu/academics/student-projects-presentations/data-collection-and-monitoring-vermifilter-toilets" class="button"> Link </a></li>
-                <li>[Media] MIT Spectrum Article <a href="https://betterworld.mit.edu/spectrum/issues/2024-fall/real-people-real-solutions-at-d-lab/" class="button"> Link </a></li>
-            </ul>
-        </div>  
+            <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
+            <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+        </div>
+        <script>let currentIndex=0;function changeImage(d){const imgs=document.querySelectorAll('.gallery-images img');imgs[currentIndex].classList.remove('active');currentIndex+=d;if(currentIndex<0)currentIndex=imgs.length-1;else if(currentIndex>=imgs.length)currentIndex=0;imgs[currentIndex].classList.add('active');}</script>
+        <div class="detail-meta">
+            <span><i>Affiliation:</i> MIT D-Lab</span>
+            <span><i>Completion:</i> August 2023</span>
+        </div>
+        <p>Ecoconcientizate is currently piloting a cutting-edge biological sewage treatment system specifically designed for use in rural Colombia. The vermifiltration system utilizes California red worms to compost fecal matter, and then drains liquids into a secondary layer of sand and gravel filters before transporting it to an artificial wetland for further treatment through a phytoremediation process. Our team conducted water quality testing on three vermifilter systems in Agua Bonita, Colombia. We also led bilingual community workshops in Spanish and English on at-home water quality monitoring for community members interested in installing their own vermifilter system.</p>
+        <h2>More</h2>
+        <ul>
+            <li>[Website] Project Page <a href="https://d-lab.mit.edu/academics/student-projects-presentations/data-collection-and-monitoring-vermifilter-toilets" class="button"> Link </a></li>
+            <li>[Media] MIT Spectrum Article <a href="https://betterworld.mit.edu/spectrum/issues/2024-fall/real-people-real-solutions-at-d-lab/" class="button"> Link </a></li>
+        </ul>
     </div>
 </body>
 </html>

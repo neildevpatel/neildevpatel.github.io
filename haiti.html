@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="project-detail.css">
     <title>Neil Patel</title>
 </head>
 <body>
@@ -18,50 +19,44 @@
             <a href="map.html">Work History</a>
         </div>
     </nav>
-    <div class="grid-2">
-        <div class="section-1">
-            <img src="pics/Headshot.jpg" alt="Neil Patel's headshot">
+    <div class="detail-hero">
+        <div class="detail-hero-bg"></div>
+        <div class="scanlines"></div>
+        <div class="bracket bracket-tl"></div>
+        <div class="bracket bracket-tr"></div>
+        <div class="detail-hero-inner">
+            <img src="pics/Headshot.jpg" alt="Neil Patel's headshot" class="detail-avatar">
             <h1>Neil Patel</h1>
-            <p>Urban Economist | Water Security & Climate Adaptation</p>
-            <div class="social-links">
+            <div class="detail-tagline">Urban Economist · Water Security & Climate Adaptation</div>
+            <div class="detail-social">
                 <a href="https://twitter.com/neildevpatel"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.linkedin.com/in/neil-patel-035879119/"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/neildevpatel"><i class="fab fa-github"></i></a>
-                <a href="https://riverinreverse.substack.com/">
-                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path stroke="currentColor" d="M3.5,2.5 L19.5,2.5 L19.5,4.5 L3.5,4.5 Z M3.5,6.5 L19.5,6.5 L19.5,8.5 L3.5,8.5 Z M3.5,10.5 L19.5,10.5 L19.5,21.5 L11.5,16.5 L3.5,21.5 L3.5,10.5 Z"></path></g></svg>
-                </a>
+                <a href="https://riverinreverse.substack.com/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path stroke="currentColor" d="M3.5,2.5 L19.5,2.5 L19.5,4.5 L3.5,4.5 Z M3.5,6.5 L19.5,6.5 L19.5,8.5 L3.5,8.5 Z M3.5,10.5 L19.5,10.5 L19.5,21.5 L11.5,16.5 L3.5,21.5 L3.5,10.5 Z"></path></g></svg></a>
             </div>
         </div>
-        <div class="section-2">  
-            <h1>Aquifer Characterization and Vulnerability Mapping for the Plaine du Nord-Massacre Aquifer in Haiti</h1>
-            <div class="gallery">
-                <div class="gallery-images">
-                    <img src="pics/haiti.png" alt="Image 1" class="active">
-                </div>
-                <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
-                <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+    </div>
+    <div class="detail-content">
+        <h1 class="detail-title">Aquifer Characterization and Vulnerability Mapping for the Plaine du Nord-Massacre Aquifer in Haiti</h1>
+        <div class="gallery">
+            <div class="gallery-images">
+                <img src="pics/haiti.png" alt="Image 1" class="active">
             </div>
-            <script>
-                let currentIndex = 0;
-                function changeImage(direction) {
-                    const images = document.querySelectorAll('.gallery-images img');
-                    images[currentIndex].classList.remove('active');
-                    currentIndex += direction;
-                    if (currentIndex < 0) currentIndex = images.length - 1;
-                    else if (currentIndex >= images.length) currentIndex = 0;
-                    images[currentIndex].classList.add('active');
-                }
-            </script>
-            <p style="font-size:90%; color: rgba(255, 255, 255, 0.691)"><i>Affiliation:</i> USAID Fragile Waters</p>
-            <p style="font-size:90%; color: rgba(255, 255, 255, 0.691)"><i>Completion:</i> November 2024</p>
-            <p>I was engaged by the USAID Fragile Waters activity to support USAID/Haiti in developing evidence-based toolkits to facilitate adaptive and concerted management of shared national and transboundary water resources. I collaborated with Northwater Consulting, USAID Eau, and USAID Fragile Waters leadership to develop a StoryMap that visualizes the connectivity of the watershed, rivers, and the aquifer, including outlining primary basins, recharge, and aquifer thickness. We additionally present high-resolution projections of population growth and water demand at the third administrative level to model future dependence on the aquifer by 2050 and inform tailored and localized management strategies. Finally, we outline emerging threats to the aquifer, including saltwater intrusion, climate change, contamination, and politicization of the Massacre River.</p>
-            <p>The StoryMap was presented at the 2024 UNC Water & Health Conference in coordination with key Haitian government stakeholders, including DINEPA, INARHy, and State University of Haiti's Center for Water Resilience.</p>
-            <h2>More</h2>
-            <ul>
-                <li>StoryMap <a href="https://storymaps.arcgis.com/stories/9a77de43499d44c2a1993ce3483129bd" class="button"> Link </a></li>
-                <li>[Video] Side Event at 2024 UNC Water & Health Conference <a href="https://www.youtube.com/watch?v=TmHmLYzQ3wE" class="button"> Link </a></li>
-            </ul>
-        </div>  
+            <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
+            <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+        </div>
+        <script>let currentIndex=0;function changeImage(d){const imgs=document.querySelectorAll('.gallery-images img');imgs[currentIndex].classList.remove('active');currentIndex+=d;if(currentIndex<0)currentIndex=imgs.length-1;else if(currentIndex>=imgs.length)currentIndex=0;imgs[currentIndex].classList.add('active');}</script>
+        <div class="detail-meta">
+            <span><i>Affiliation:</i> USAID Fragile Waters</span>
+            <span><i>Completion:</i> November 2024</span>
+        </div>
+        <p>I was engaged by the USAID Fragile Waters activity to support USAID/Haiti in developing evidence-based toolkits to facilitate adaptive and concerted management of shared national and transboundary water resources. I collaborated with Northwater Consulting, USAID Eau, and USAID Fragile Waters leadership to develop a StoryMap that visualizes the connectivity of the watershed, rivers, and the aquifer, including outlining primary basins, recharge, and aquifer thickness. We additionally present high-resolution projections of population growth and water demand at the third administrative level to model future dependence on the aquifer by 2050 and inform tailored and localized management strategies. Finally, we outline emerging threats to the aquifer, including saltwater intrusion, climate change, contamination, and politicization of the Massacre River.</p>
+        <p>The StoryMap was presented at the 2024 UNC Water & Health Conference in coordination with key Haitian government stakeholders, including DINEPA, INARHy, and State University of Haiti's Center for Water Resilience.</p>
+        <h2>More</h2>
+        <ul>
+            <li>StoryMap <a href="https://storymaps.arcgis.com/stories/9a77de43499d44c2a1993ce3483129bd" class="button"> Link </a></li>
+            <li>[Video] Side Event at 2024 UNC Water & Health Conference <a href="https://www.youtube.com/watch?v=TmHmLYzQ3wE" class="button"> Link </a></li>
+        </ul>
     </div>
 </body>
 </html>
