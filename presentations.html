@@ -7,59 +7,30 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Neil Patel</title>
-    <style>
-        .section-1 img {
-            max-width: 40%;
-            height: auto;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto;
-        }
-        .section-1 a {
-            display: inline; /* Display the anchor element inline */
-            margin-right: 0px; /* Add some spacing between the links */
-        }
-        nav {
-            text-align: center;
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #ced9ff;
-        }
-        a i.fab,
-        a svg {
-        width: 24px;
-        height: 24px;
-        display: inline-block;
-        vertical-align: middle;
-        color: #ced9ff; /* Match Substack icon stroke */
-        }
-    </style>
 </head>
 <body>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="research.html">Projects</a>
-        <a href="presentations.html">Presentations</a>
-        <a href="map.html">Work History</a>
+        <a class="nav-brand" href="index.html">Neil Patel</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="research.html">Projects</a>
+            <a href="presentations.html" class="active">Presentations</a>
+            <a href="map.html">Work History</a>
+        </div>
     </nav>
     <div class="grid-2">
         <div class="section-1">
             <img src="pics/Headshot.jpg" alt="Neil Patel's headshot">
             <h1>Neil Patel</h1>
             <p>Urban Economist | Water Security & Climate Adaptation</p>
-            <a href="https://twitter.com/neildevpatel"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/neil-patel-035879119/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/neildevpatel"><i class="fab fa-github"></i></a>
-            <a href="https://riverinreverse.substack.com/">
-               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="substack">
-                    <g id="social/logos/substack" fill="none" fill-rule="evenodd" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
-                        <path id="line" stroke="#ced9ff" d="M3.5,2.5 L19.5,2.5 L19.5,4.5 L3.5,4.5 Z M3.5,6.5 L19.5,6.5 L19.5,8.5 L3.5,8.5 Z M3.5,10.5 L19.5,10.5 L19.5,21.5 L11.5,16.5 L3.5,21.5 L3.5,10.5 Z" class="colorStroke000000 svgStroke"></path>
-                    </g>
-                </svg>
-            </a>
+            <div class="social-links">
+                <a href="https://twitter.com/neildevpatel"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/neil-patel-035879119/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/neildevpatel"><i class="fab fa-github"></i></a>
+                <a href="https://riverinreverse.substack.com/">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path stroke="currentColor" d="M3.5,2.5 L19.5,2.5 L19.5,4.5 L3.5,4.5 Z M3.5,6.5 L19.5,6.5 L19.5,8.5 L3.5,8.5 Z M3.5,10.5 L19.5,10.5 L19.5,21.5 L11.5,16.5 L3.5,21.5 L3.5,10.5 Z"></path></g></svg>
+                </a>
+            </div>
         </div>
         <div class="section-2">
             <h2>Presentations</h2>
@@ -93,7 +64,6 @@
                 <li>November 2019. The University of Texas at Austin, "The Uninhabitable Earth: A Conversation with David Wallace-Wells," Panelist on Student Environmental Activism. Austin, TX. </li>
             </ul> 
         </div>  
-        </div>
     </div>
 </body>
 </html>

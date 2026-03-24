@@ -7,43 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Neil Patel</title>
-    <style>
-        .section-1 img {
-            max-width: 40%;
-            height: auto;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto;
-        }
-        .section-1 a {
-            display: inline; /* Display the anchor element inline */
-            margin-right: 0px; /* Add some spacing between the links */
-        }
-        nav {
-            text-align: center;
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #ced9ff;
-        }
-        a i.fab,
-        a svg {
-        width: 24px;
-        height: 24px;
-        display: inline-block;
-        vertical-align: middle;
-        color: #ced9ff; /* Match Substack icon stroke */
-        }
-    </style>
 </head>
 <body>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="research.html">Projects</a>
-        <a href="presentations.html">Presentations</a>
-        <a href="map.html">Work History</a>
+        <a class="nav-brand" href="index.html">Neil Patel</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="research.html" class="active">Projects</a>
+            <a href="presentations.html">Presentations</a>
+            <a href="map.html">Work History</a>
+        </div>
     </nav>
     <div class="grid-2">
         <div class="section-1">
@@ -62,7 +35,7 @@
             </a>
         </div>
         <div class="section-2">  
-            </br><h1>River in Reverse: A Cultural History of the Chicago River</h1>
+            <h1>River in Reverse: A Cultural History of the Chicago River</h1>
             <div class="gallery">
                 <div class="gallery-images">
                     <img src="pics/substack.JPG" alt="Image 1" class="active">
@@ -76,33 +49,23 @@
                 <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
                 <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
             </div>
-        
             <script>
                 let currentIndex = 0;
-        
                 function changeImage(direction) {
                     const images = document.querySelectorAll('.gallery-images img');
                     images[currentIndex].classList.remove('active');
-        
                     currentIndex += direction;
-        
-                    // Wrap around if at the ends
-                    if (currentIndex < 0) {
-                        currentIndex = images.length - 1;
-                    } else if (currentIndex >= images.length) {
-                        currentIndex = 0;
-                    }
-        
+                    if (currentIndex < 0) { currentIndex = images.length - 1; }
+                    else if (currentIndex >= images.length) { currentIndex = 0; }
                     images[currentIndex].classList.add('active');
                 }
-            </script></br>
+            </script>
             <p style="font-size:90%; color: rgba(255, 255, 255, 0.691)"><i>Completion:</i> Ongoing</p>
-            </br><p> <i>River in Reverse</i> is a Substack that traces the deep connection between Chicago's urban waterways and the city's economic and cultural development. Through understanding the history of the Chicago River, the blog explores pathways forward on building equitable, climate-resilient, and ecologically vibrant cities that foster community and feel like home.
+            <p> <i>River in Reverse</i> is a Substack that traces the deep connection between Chicago's urban waterways and the city's economic and cultural development. Through understanding the history of the Chicago River, the blog explores pathways forward on building equitable, climate-resilient, and ecologically vibrant cities that foster community and feel like home.</p>
             <ul>
                 <li>Substack <a href="https://riverinreverse.substack.com/" class="button"> Link </a></li>
             </ul>
         </div>  
-        </div>
     </div>
 </body>
 </html>
