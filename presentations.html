@@ -7,6 +7,182 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Neil Patel</title>
+    <style>
+        /* ── Hero ── */
+        .hero-section {
+            position: relative;
+            padding: 140px 0 4rem;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-bg {
+            position: absolute; inset: 0;
+            background:
+                linear-gradient(180deg, rgba(10,15,26,0.2) 0%, rgba(10,15,26,0.8) 60%, var(--bg-dark) 100%),
+                linear-gradient(135deg, #0f1923 0%, #1a2744 50%, #0d1520 100%);
+            z-index: 0;
+        }
+
+        .scanlines {
+            position: absolute; inset: 0; z-index: 1;
+            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(110,168,215,0.012) 2px, rgba(110,168,215,0.012) 4px);
+            pointer-events: none;
+        }
+
+        .bracket { position: absolute; z-index: 2; width: 40px; height: 40px; pointer-events: none; opacity: 0.3; }
+        .bracket-tl { top: 80px; left: 24px; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+        .bracket-tr { top: 80px; right: 24px; border-top: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+        .bracket-bl { bottom: 24px; left: 24px; border-bottom: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+        .bracket-br { bottom: 24px; right: 24px; border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+
+        .hero-inner {
+            position: relative; z-index: 5;
+            max-width: 660px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-avatar {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border);
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+        }
+
+        .hero-inner h1 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-tagline {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-social {
+            display: flex; gap: 1rem; justify-content: center;
+        }
+        .hero-social a { color: var(--text-muted); transition: color 0.2s; display: flex; align-items: center; }
+        .hero-social a:hover { color: var(--accent); }
+        .hero-social a i.fab, .hero-social a svg { width: 18px; height: 18px; }
+        .hero-social a svg path { stroke: currentColor; }
+
+        /* ── Page Content ── */
+        .page-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 2rem 6rem;
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+        /* ── Presentation Cards ── */
+        .pres-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.25s ease;
+        }
+
+        .pres-card:hover {
+            border-color: rgba(110,168,215,0.2);
+            transform: translateX(4px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        }
+
+        .pres-date {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: var(--accent);
+            background: rgba(110,168,215,0.1);
+            border: 1px solid rgba(110,168,215,0.15);
+            padding: 3px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .pres-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .pres-body p {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .pres-title {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .pres-venue {
+            color: var(--text-muted);
+        }
+
+        .pres-links {
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .pres-links a {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--accent);
+            background: rgba(110,168,215,0.08);
+            padding: 3px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid rgba(110,168,215,0.12);
+        }
+
+        .pres-links a:hover {
+            background: rgba(110,168,215,0.18);
+            border-color: rgba(110,168,215,0.3);
+        }
+
+        @media (max-width: 640px) {
+            .pres-card { flex-direction: column; gap: 0.5rem; }
+            .pres-date { align-self: flex-start; }
+            .hero-inner h1 { font-size: 1.8rem; }
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -18,52 +194,145 @@
             <a href="map.html">Work History</a>
         </div>
     </nav>
-    <div class="grid-2">
-        <div class="section-1">
-            <img src="pics/Headshot.jpg" alt="Neil Patel's headshot">
+
+    <div class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="scanlines"></div>
+        <div class="bracket bracket-tl"></div>
+        <div class="bracket bracket-tr"></div>
+        <div class="bracket bracket-bl"></div>
+        <div class="bracket bracket-br"></div>
+        <div class="hero-inner">
+            <img src="pics/Headshot.jpg" alt="Neil Patel's headshot" class="hero-avatar">
             <h1>Neil Patel</h1>
-            <p>Urban Economist | Water Security & Climate Adaptation</p>
-            <div class="social-links">
+            <div class="hero-tagline">Urban Economist · Water Security & Climate Adaptation</div>
+            <div class="hero-social">
                 <a href="https://twitter.com/neildevpatel"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.linkedin.com/in/neil-patel-035879119/"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/neildevpatel"><i class="fab fa-github"></i></a>
                 <a href="https://riverinreverse.substack.com/">
-                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path stroke="currentColor" d="M3.5,2.5 L19.5,2.5 L19.5,4.5 L3.5,4.5 Z M3.5,6.5 L19.5,6.5 L19.5,8.5 L3.5,8.5 Z M3.5,10.5 L19.5,10.5 L19.5,21.5 L11.5,16.5 L3.5,21.5 L3.5,10.5 Z"></path></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path stroke="currentColor" d="M3.5,2.5 L19.5,2.5 L19.5,4.5 L3.5,4.5 Z M3.5,6.5 L19.5,6.5 L19.5,8.5 L3.5,8.5 Z M3.5,10.5 L19.5,10.5 L19.5,21.5 L11.5,16.5 L3.5,21.5 L3.5,10.5 Z"></path></g></svg>
                 </a>
             </div>
         </div>
-        <div class="section-2">
-            <h2>Presentations</h2>
-            <ul>
-                <li>January 2026. 2026 ECOSOC Partnerships Forum, "SDG 6 Action Segment", Moderator. New York, NY. <a href="https://webtv.un.org/en/asset/k1q/k1qb23qe70" class="button">Video</a></li>
-                
-                <li>October 2024. UNC Water & Health Conference, "Leveraging Data to Address Haiti's Growing Groundwater Insecurity".  Chapel Hill, NC. <a href="https://www.youtube.com/watch?v=TmHmLYzQ3wE" class="button">Video</a></li>
+    </div>
 
-                <li>October 2024. Cracking the Nut 2024, "Advancing Livelihoods and Climate Smart Agriculture in Vulnerable Watersheds Through Corporate Partnerships".  Abuja, Nigeria. <a href="files/CTN24_09.19.2024.pdf" class="button">Slides</a></li>
+    <div class="page-content">
+        <div class="section-label">Presentations</div>
 
-                <li>April 2024. Innovations in Climate Resilience (ICR24), "Financing Water Security through Payments for Ecosystem Services".  Washington, DC. <a href="https://s3.amazonaws.com/xcdacademy/battelle/2024_Climate/B5_0930_168_Patel_AuRev.pdf" class="button">Slides</a> <a href="https://proceedings.battelle.org/index.cfm/article/view/ID/16003" class="button">Video</a></li>
+        <div class="pres-card">
+            <div class="pres-date">Jan 2026</div>
+            <div class="pres-body">
+                <p><span class="pres-title">2026 ECOSOC Partnerships Forum, "SDG 6 Action Segment", Moderator.</span> <span class="pres-venue">New York, NY.</span></p>
+                <div class="pres-links"><a href="https://webtv.un.org/en/asset/k1q/k1qb23qe70">Video</a></div>
+            </div>
+        </div>
 
-                <li>December 2023. DAI Asia-Pacific Project Innovation Conference, "Project Innovations in Water Security, Sanitation, and Hygiene".  Jakarta, Indonesia.</li>
+        <div class="pres-card">
+            <div class="pres-date">Oct 2024</div>
+            <div class="pres-body">
+                <p><span class="pres-title">UNC Water & Health Conference, "Leveraging Data to Address Haiti's Growing Groundwater Insecurity".</span> <span class="pres-venue">Chapel Hill, NC.</span></p>
+                <div class="pres-links"><a href="https://www.youtube.com/watch?v=TmHmLYzQ3wE">Video</a></div>
+            </div>
+        </div>
 
-                <li>October 2023. UNC Water & Health Conference, "A Deep Learning Approach to Water Point Detection and Mapping Using Street-Level Imagery" [Technology Showcase]. Chapel Hill, NC. <a href="files/UNC Tech Showcase.pdf" class="button">Slides</a></li>
+        <div class="pres-card">
+            <div class="pres-date">Oct 2024</div>
+            <div class="pres-body">
+                <p><span class="pres-title">Cracking the Nut 2024, "Advancing Livelihoods and Climate Smart Agriculture in Vulnerable Watersheds Through Corporate Partnerships".</span> <span class="pres-venue">Abuja, Nigeria.</span></p>
+                <div class="pres-links"><a href="files/CTN24_09.19.2024.pdf">Slides</a></div>
+            </div>
+        </div>
 
-                <li>July 2023. United Nations High Level Political Forum on Sustainable Development, SDG 6 Special Event, Panelist for Session on Youth Engagement. New York, NY. <a href="https://media.un.org/en/asset/k1c/k1cx6qhd4j?kalturaStartTime=1228" class="button">Video</a></li>
+        <div class="pres-card">
+            <div class="pres-date">Apr 2024</div>
+            <div class="pres-body">
+                <p><span class="pres-title">Innovations in Climate Resilience (ICR24), "Financing Water Security through Payments for Ecosystem Services".</span> <span class="pres-venue">Washington, DC.</span></p>
+                <div class="pres-links">
+                    <a href="https://s3.amazonaws.com/xcdacademy/battelle/2024_Climate/B5_0930_168_Patel_AuRev.pdf">Slides</a>
+                    <a href="https://proceedings.battelle.org/index.cfm/article/view/ID/16003">Video</a>
+                </div>
+            </div>
+        </div>
 
-                <li>July 2023. United Nations High Level Political Forum on Sustainable Development, SDG 6 Special Event. Intervention from the Floor for Session on Financing. New York, NY. <a href="https://media.un.org/en/asset/k1c/k1cx6qhd4j?kalturaStartTime=25621" class="button">Video</a></li>
+        <div class="pres-card">
+            <div class="pres-date">Dec 2023</div>
+            <div class="pres-body">
+                <p><span class="pres-title">DAI Asia-Pacific Project Innovation Conference, "Project Innovations in Water Security, Sanitation, and Hygiene".</span> <span class="pres-venue">Jakarta, Indonesia.</span></p>
+            </div>
+        </div>
 
-                <li>March 2023. United Nations 2023 Water Conference, Turning the Tide: A Call to Collective Action, Global Commission on the Economics of Water, Intervention from the Floor. New York, NY. <a href="https://youtu.be/Vssr-d4mcH4?t=327" class="button">Video</a></li>
+        <div class="pres-card">
+            <div class="pres-date">Oct 2023</div>
+            <div class="pres-body">
+                <p><span class="pres-title">UNC Water & Health Conference, "A Deep Learning Approach to Water Point Detection and Mapping Using Street-Level Imagery" [Technology Showcase].</span> <span class="pres-venue">Chapel Hill, NC.</span></p>
+                <div class="pres-links"><a href="files/UNC Tech Showcase.pdf">Slides</a></div>
+            </div>
+        </div>
 
-                <li>October 2022. UN World Water Development Report 2022: Making the Invisible Visible, Highlighting Youth Work on Groundwater Management [Webinar]. "Youth Networkings: Creating Opportunities for Young Groundwater Professionals" <a href="files/UNESCO_GWYN.pdf" class="button">Slides</a></li>
+        <div class="pres-card">
+            <div class="pres-date">Jul 2023</div>
+            <div class="pres-body">
+                <p><span class="pres-title">United Nations High Level Political Forum on Sustainable Development, SDG 6 Special Event, Panelist for Session on Youth Engagement.</span> <span class="pres-venue">New York, NY.</span></p>
+                <div class="pres-links"><a href="https://media.un.org/en/asset/k1c/k1cx6qhd4j?kalturaStartTime=1228">Video</a></div>
+            </div>
+        </div>
 
-                <li>November 2021. Water Science Policy Virtual Gala: Catalysing Water Solutions to Climate Change [Webinar], "Streamlining Systems-Based Leak Prevention in CDMX through Blockchain." <a href="https://youtu.be/tNmJsG2Y5Do?t=2120" class="button">Video</a></li>
+        <div class="pres-card">
+            <div class="pres-date">Jul 2023</div>
+            <div class="pres-body">
+                <p><span class="pres-title">United Nations High Level Political Forum on Sustainable Development, SDG 6 Special Event. Intervention from the Floor for Session on Financing.</span> <span class="pres-venue">New York, NY.</span></p>
+                <div class="pres-links"><a href="https://media.un.org/en/asset/k1c/k1cx6qhd4j?kalturaStartTime=25621">Video</a></div>
+            </div>
+        </div>
 
-                <li>October 2021. IFAT Eurasia: Climate Change and Environment Conference [Virtual], "Strengthening Systems-Based Leak Prevention in Ciudad de México through Blockchain." <a href="files/IFAT Eurasia – Blockchain CDMX.pdf" class="button">Slides</a></li>
+        <div class="pres-card">
+            <div class="pres-date">Mar 2023</div>
+            <div class="pres-body">
+                <p><span class="pres-title">United Nations 2023 Water Conference, Turning the Tide: A Call to Collective Action, Global Commission on the Economics of Water, Intervention from the Floor.</span> <span class="pres-venue">New York, NY.</span></p>
+                <div class="pres-links"><a href="https://youtu.be/Vssr-d4mcH4?t=327">Video</a></div>
+            </div>
+        </div>
 
-                <li>June 2021. 6th International Faecal Sludge Management Conference (FSM6) [Virtual], "Scaling Inclusive Public and Private Enterprises in Fecal Sludge Management: A Global Perspective" <a href="https://www.youtube.com/watch?v=V3EdOKXI91g" class="button">Video</a></li>
-                
-                <li>November 2019. The University of Texas at Austin, "The Uninhabitable Earth: A Conversation with David Wallace-Wells," Panelist on Student Environmental Activism. Austin, TX. </li>
-            </ul> 
-        </div>  
+        <div class="pres-card">
+            <div class="pres-date">Oct 2022</div>
+            <div class="pres-body">
+                <p><span class="pres-title">UN World Water Development Report 2022: Making the Invisible Visible, Highlighting Youth Work on Groundwater Management [Webinar]. "Youth Networkings: Creating Opportunities for Young Groundwater Professionals"</span></p>
+                <div class="pres-links"><a href="files/UNESCO_GWYN.pdf">Slides</a></div>
+            </div>
+        </div>
+
+        <div class="pres-card">
+            <div class="pres-date">Nov 2021</div>
+            <div class="pres-body">
+                <p><span class="pres-title">Water Science Policy Virtual Gala: Catalysing Water Solutions to Climate Change [Webinar], "Streamlining Systems-Based Leak Prevention in CDMX through Blockchain."</span></p>
+                <div class="pres-links"><a href="https://youtu.be/tNmJsG2Y5Do?t=2120">Video</a></div>
+            </div>
+        </div>
+
+        <div class="pres-card">
+            <div class="pres-date">Oct 2021</div>
+            <div class="pres-body">
+                <p><span class="pres-title">IFAT Eurasia: Climate Change and Environment Conference [Virtual], "Strengthening Systems-Based Leak Prevention in Ciudad de México through Blockchain."</span></p>
+                <div class="pres-links"><a href="files/IFAT Eurasia – Blockchain CDMX.pdf">Slides</a></div>
+            </div>
+        </div>
+
+        <div class="pres-card">
+            <div class="pres-date">Jun 2021</div>
+            <div class="pres-body">
+                <p><span class="pres-title">6th International Faecal Sludge Management Conference (FSM6) [Virtual], "Scaling Inclusive Public and Private Enterprises in Fecal Sludge Management: A Global Perspective"</span></p>
+                <div class="pres-links"><a href="https://www.youtube.com/watch?v=V3EdOKXI91g">Video</a></div>
+            </div>
+        </div>
+
+        <div class="pres-card">
+            <div class="pres-date">Nov 2019</div>
+            <div class="pres-body">
+                <p><span class="pres-title">The University of Texas at Austin, "The Uninhabitable Earth: A Conversation with David Wallace-Wells," Panelist on Student Environmental Activism.</span> <span class="pres-venue">Austin, TX.</span></p>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
