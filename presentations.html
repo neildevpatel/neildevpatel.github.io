@@ -9,6 +9,31 @@
     <title>Neil Patel</title>
     <style>
         /* ── Hero ── */
+        /* Badge */
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 3px 9px;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .badge-active {
+            color: #4ade80;
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+        }
+
+        .badge-prev {
+            color: var(--text-muted);
+            background: rgba(90, 100, 120, 0.1);
+            border: 1px solid var(--border);
+        }
         .hero-section {
             position: relative;
             padding: 140px 0 4rem;
@@ -221,7 +246,7 @@
         <div class="section-label">Presentations</div>
 
         <div class="pres-card">
-            <div class="pres-date">Jan 2026</div>
+            <div class="badge badge-active">Jan 2026</div>
             <div class="pres-body">
                 <p><span class="pres-title">2026 ECOSOC Partnerships Forum, "SDG 6 Action Segment", Moderator.</span> <span class="pres-venue">New York, NY.</span></p>
                 <div class="pres-links"><a href="https://webtv.un.org/en/asset/k1q/k1qb23qe70">Video</a></div>
@@ -229,7 +254,7 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Oct 2024</div>
+            <div class="badge badge-active">Oct 2024</div>
             <div class="pres-body">
                 <p><span class="pres-title">UNC Water & Health Conference, "Leveraging Data to Address Haiti's Growing Groundwater Insecurity".</span> <span class="pres-venue">Chapel Hill, NC.</span></p>
                 <div class="pres-links"><a href="https://www.youtube.com/watch?v=TmHmLYzQ3wE">Video</a></div>
@@ -237,7 +262,7 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Oct 2024</div>
+            <div class="badge badge-active">Oct 2024</div>
             <div class="pres-body">
                 <p><span class="pres-title">Cracking the Nut 2024, "Advancing Livelihoods and Climate Smart Agriculture in Vulnerable Watersheds Through Corporate Partnerships".</span> <span class="pres-venue">Abuja, Nigeria.</span></p>
                 <div class="pres-links"><a href="files/CTN24_09.19.2024.pdf">Slides</a></div>
@@ -245,7 +270,7 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Apr 2024</div>
+            <div class="badge badge-active">Apr 2024</div>
             <div class="pres-body">
                 <p><span class="pres-title">Innovations in Climate Resilience (ICR24), "Financing Water Security through Payments for Ecosystem Services".</span> <span class="pres-venue">Washington, DC.</span></p>
                 <div class="pres-links">
@@ -256,14 +281,14 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Dec 2023</div>
+            <div class="badge badge-active">Dec 2023</div>
             <div class="pres-body">
                 <p><span class="pres-title">DAI Asia-Pacific Project Innovation Conference, "Project Innovations in Water Security, Sanitation, and Hygiene".</span> <span class="pres-venue">Jakarta, Indonesia.</span></p>
             </div>
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Oct 2023</div>
+            <div class="badge badge-active">Oct 2023</div>
             <div class="pres-body">
                 <p><span class="pres-title">UNC Water & Health Conference, "A Deep Learning Approach to Water Point Detection and Mapping Using Street-Level Imagery" [Technology Showcase].</span> <span class="pres-venue">Chapel Hill, NC.</span></p>
                 <div class="pres-links"><a href="files/UNC Tech Showcase.pdf">Slides</a></div>
@@ -271,7 +296,7 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Jul 2023</div>
+            <div class="badge badge-active">Jul 2023</div>
             <div class="pres-body">
                 <p><span class="pres-title">United Nations High Level Political Forum on Sustainable Development, SDG 6 Special Event, Panelist for Session on Youth Engagement.</span> <span class="pres-venue">New York, NY.</span></p>
                 <div class="pres-links"><a href="https://media.un.org/en/asset/k1c/k1cx6qhd4j?kalturaStartTime=1228">Video</a></div>
@@ -279,7 +304,7 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Jul 2023</div>
+            <div class="badge badge-active">Jul 2023</div>
             <div class="pres-body">
                 <p><span class="pres-title">United Nations High Level Political Forum on Sustainable Development, SDG 6 Special Event. Intervention from the Floor for Session on Financing.</span> <span class="pres-venue">New York, NY.</span></p>
                 <div class="pres-links"><a href="https://media.un.org/en/asset/k1c/k1cx6qhd4j?kalturaStartTime=25621">Video</a></div>
@@ -287,7 +312,7 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Mar 2023</div>
+            <div class="badge badge-active">Mar 2023</div>
             <div class="pres-body">
                 <p><span class="pres-title">United Nations 2023 Water Conference, Turning the Tide: A Call to Collective Action, Global Commission on the Economics of Water, Intervention from the Floor.</span> <span class="pres-venue">New York, NY.</span></p>
                 <div class="pres-links"><a href="https://youtu.be/Vssr-d4mcH4?t=327">Video</a></div>
@@ -295,7 +320,7 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Oct 2022</div>
+            <div class="badge badge-active">Oct 2022</div>
             <div class="pres-body">
                 <p><span class="pres-title">UN World Water Development Report 2022: Making the Invisible Visible, Highlighting Youth Work on Groundwater Management [Webinar]. "Youth Networkings: Creating Opportunities for Young Groundwater Professionals"</span></p>
                 <div class="pres-links"><a href="files/UNESCO_GWYN.pdf">Slides</a></div>
@@ -303,7 +328,7 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Nov 2021</div>
+            <div class="badge badge-active">Nov 2021</div>
             <div class="pres-body">
                 <p><span class="pres-title">Water Science Policy Virtual Gala: Catalysing Water Solutions to Climate Change [Webinar], "Streamlining Systems-Based Leak Prevention in CDMX through Blockchain."</span></p>
                 <div class="pres-links"><a href="https://youtu.be/tNmJsG2Y5Do?t=2120">Video</a></div>
@@ -311,7 +336,7 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Oct 2021</div>
+            <div class="badge badge-active">Oct 2021</div>
             <div class="pres-body">
                 <p><span class="pres-title">IFAT Eurasia: Climate Change and Environment Conference [Virtual], "Strengthening Systems-Based Leak Prevention in Ciudad de México through Blockchain."</span></p>
                 <div class="pres-links"><a href="files/IFAT Eurasia – Blockchain CDMX.pdf">Slides</a></div>
@@ -319,7 +344,7 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Jun 2021</div>
+            <div class="badge badge-active">Jun 2021</div>
             <div class="pres-body">
                 <p><span class="pres-title">6th International Faecal Sludge Management Conference (FSM6) [Virtual], "Scaling Inclusive Public and Private Enterprises in Fecal Sludge Management: A Global Perspective"</span></p>
                 <div class="pres-links"><a href="https://www.youtube.com/watch?v=V3EdOKXI91g">Video</a></div>
@@ -327,7 +352,7 @@
         </div>
 
         <div class="pres-card">
-            <div class="pres-date">Nov 2019</div>
+            <div class="badge badge-active">Nov 2019</div>
             <div class="pres-body">
                 <p><span class="pres-title">The University of Texas at Austin, "The Uninhabitable Earth: A Conversation with David Wallace-Wells," Panelist on Student Environmental Activism.</span> <span class="pres-venue">Austin, TX.</span></p>
             </div>
