@@ -170,8 +170,7 @@
 .detail-content .gallery {
     position: relative;
     width: 100%;
-    max-width: 400px;          /* caps the width so a tall 9:16 box stays on screen */
-    margin: 0 auto 1.5rem;     /* centres the gallery in the column */
+    margin: 0 0 1.5rem;
     border-radius: 10px;
     overflow: hidden;
     background: var(--bg-dark);
@@ -181,7 +180,7 @@
 .detail-content .gallery-images {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;      /* was 16 / 10 */
+    aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
